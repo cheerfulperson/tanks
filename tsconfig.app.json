@@ -27,8 +27,8 @@
     "baseUrl": ".",
     "paths": {
       "components/*": ["./src/components/*"],
-      "config": ["./src/config"],
       "config/*": ["./src/config/*"],
+      "constants/*": ["./src/constants/*"],
       "data_layer/*": ["./src/data_layer/*"],
       "hooks/*": ["./src/hooks/*"],
       "layouts/*": ["./src/layouts/*"],
