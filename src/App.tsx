@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { Vehicles } from "views/Vehicles/Vehicles";
+import { Vehicles } from "views/Vehicles";
 import { defaultQueryFn } from "config/queryClient";
 
 function App() {

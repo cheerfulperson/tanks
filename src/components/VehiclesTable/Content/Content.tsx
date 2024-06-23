@@ -3,8 +3,7 @@ import { ReactElement } from "react";
 import { Vehicle } from "data_layer/queries/useVehiclesQuery";
 import { tank1Image } from "assets";
 import { Loader } from "components/UI";
-import { Row } from "./Row";
-import { HeadRow } from "./Row/HeadRow";
+import { HeadRow, Row } from "./Row";
 import styles from "./Content.module.scss";
 
 interface ContentProps {

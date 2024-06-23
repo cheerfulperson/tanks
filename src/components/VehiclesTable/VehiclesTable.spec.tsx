@@ -1,4 +1,10 @@
-import { render, waitFor, screen, cleanup } from "@testing-library/react";
+import {
+  render,
+  waitFor,
+  screen,
+  cleanup,
+  getByText,
+} from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { VehiclesQueryParams } from "data_layer/queries/useVehiclesQuery";
@@ -7,23 +13,14 @@ import { mockVehicles } from "mocks/vehicles";
 import { VehiclesTable } from "./VehiclesTable";
 
 const mockLoading = false;
-let mockFilters: VehiclesQueryParams = {
+const mockFilters: VehiclesQueryParams = {
   search: "",
   limit: 5,
   page: 1,
 };
 const mockTotalCount = mockVehicles.length;
 
-function combineFilters(filters: Partial<VehiclesQueryParams>) {
-  mockFilters = {
-    ...mockFilters,
-    ...filters,
-  };
-}
-
-const mockOnFiltersChange: OnFiltersChangeFn = vi
-  .fn()
-  .mockImplementation(combineFilters);
+const mockOnFiltersChange: OnFiltersChangeFn = vi.fn();
 
 describe("VehiclesTable", () => {
   beforeEach(() => {
@@ -43,5 +40,45 @@ describe("VehiclesTable", () => {
     await waitFor(() =>
       expect(screen.getAllByTestId("row-item")).toHaveLength(10)
     );
+  });
+
+  it("renders the table with several pages", async () => {
+    render(
+      <VehiclesTable
+        vehicles={mockVehicles.slice(0, 5)}
+        loading={mockLoading}
+        filters={{
+          ...mockFilters,
+          limit: 5,
+        }}
+        totalCount={mockTotalCount}
+        onFiltersChange={mockOnFiltersChange}
+      />
+    );
+    await waitFor(() =>
+      expect(screen.getAllByTestId("row-item")).toHaveLength(5)
+    );
+    await waitFor(() =>
+      expect(screen.getByTestId("pagination-items").children).toHaveLength(2)
+    );
+  });
+
+  it("renders the table with no items", async () => {
+    const { container } = render(
+      <VehiclesTable
+        vehicles={[]}
+        loading={mockLoading}
+        filters={{
+          ...mockFilters,
+          limit: 5,
+        }}
+        totalCount={0}
+        onFiltersChange={mockOnFiltersChange}
+      />
+    );
+    await waitFor(() =>
+      expect(screen.getByTestId("pagination-items").children).toHaveLength(1)
+    );
+    getByText(container, 'No vehicles found');
   });
 });

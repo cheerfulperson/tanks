@@ -1,5 +1,5 @@
 import { Nations } from "constants/nations";
-import { Vehicle } from "data_layer/queries/useVehiclesQuery";
+import { Vehicle, VehiclesResponse } from "data_layer/queries/useVehiclesQuery";
 
 export const mockVehicles: Vehicle[] = [
   {
@@ -165,3 +165,18 @@ export const mockVehicles: Vehicle[] = [
     tank_id: 9761,
   },
 ];
+
+export const mockVehiclesResponse: VehiclesResponse = {
+  status: "ok",
+  meta: {
+    count: mockVehicles.length,
+    limit: 10,
+    page: 1,
+    total: mockVehicles.length,
+    page_total: 1,
+  },
+  data: mockVehicles.reduce((acc, vehicle) => {
+    acc[vehicle.tank_id] = vehicle;
+    return acc;
+  }, {} as Record<string, Vehicle>),
+};

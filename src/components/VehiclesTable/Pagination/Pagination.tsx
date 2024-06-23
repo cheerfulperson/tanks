@@ -67,12 +67,12 @@ export const Pagination = ({
   };
 
   return (
-    <div className={styles.container} data-testid="pagination-component">
+    <div className={styles.container}>
       <div className={styles.pagination}>
         <Button onClick={prevPage}>
           <ChevronLeft />
         </Button>
-        <div className={styles.numbers}>
+        <div className={styles.numbers} data-testid="pagination-items">
           {!isFirstPages ||
             (!totalPages.length && <span className={styles.dots}>...</span>)}
           {displayPages.map((pageNumber) => (
@@ -92,19 +92,21 @@ export const Pagination = ({
           <ChevronRight />
         </Button>
       </div>
-      <Select
-        className={styles.select}
-        value={LimitsPerPageOptions.find(
-          (option) => option.value === limit.toString()
-        )}
-        options={LimitsPerPageOptions}
-        onChange={(data) => {
-          if (data) {
-            onFiltersChange({ limit: parseInt(data.value), page: 1 });
-          }
-        }}
-        menuPlacement="top"
-      />
+      <div className={styles.selectContainer} data-testid="select-container">
+        <Select
+        openMenuOnClick
+          value={LimitsPerPageOptions.find(
+            (option) => option.value === limit.toString()
+          )}
+          options={LimitsPerPageOptions}
+          onChange={(data) => {
+            if (data) {
+              onFiltersChange({ limit: parseInt(data.value), page: 1 });
+            }
+          }}
+          menuPlacement="top"
+        />
+      </div>
     </div>
   );
 };
