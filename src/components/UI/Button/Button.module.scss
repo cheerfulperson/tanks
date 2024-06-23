@@ -1,25 +1,14 @@
 .button {
-  padding: 4px 12px;
-  border-radius: 8px;
+  background-color: transparent;
+  color: #ffffff;
   cursor: pointer;
   transition: opacity 0.3s, transform 0.1s;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
-}
-
-.default {
-  background-color: #ffaa00;
-  color: #000000;
-}
-
-.text {
-  background-color: transparent;
-  color: #ffffff;
-  padding: 4px;
 }

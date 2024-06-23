@@ -3,14 +3,11 @@ import classNames from "classnames";
 
 import styles from "./Button.module.scss";
 
-type ButtonType = "default" | "text";
-
 interface ButtonProps {
   children: ReactNode;
   className?: string;
   htmlType?: ComponentProps<"button">["type"];
   onClick?: () => void;
-  type?: ButtonType;
 }
 
 export const Button = ({
@@ -18,11 +15,10 @@ export const Button = ({
   className,
   htmlType = "button",
   onClick,
-  type = "default",
 }: ButtonProps) => {
   return (
     <button
-      className={classNames(styles.button, styles[type], className)}
+      className={classNames(styles.button, className)}
       onClick={onClick}
       type={htmlType}
     >

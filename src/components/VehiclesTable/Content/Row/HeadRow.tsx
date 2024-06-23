@@ -9,14 +9,16 @@ import styles from "./Row.module.scss";
  */
 export const HeadRow = (): ReactElement => {
   return (
-    <div className={classNames(styles.row, styles.headRow)}>
-      <div className={styles.tier}>Tier</div>
-      <div />
-      <div />
-      <div>Name</div>
-      <div className={styles.price}>Price</div>
-      <div className={styles.price}>Price XP</div>
-      <div>Nation</div>
+    <div className={classNames(styles.rowContainer, styles.headRowContainer)}>
+      <div className={classNames(styles.row, styles.headRow)}>
+        <div className={styles.tier}>Tier</div>
+        <div />
+        <div />
+        <div>Name</div>
+        <div className={styles.price}>Price</div>
+        <div className={styles.price}>Price XP</div>
+        <div>Nation</div>
+      </div>
     </div>
   );
 };

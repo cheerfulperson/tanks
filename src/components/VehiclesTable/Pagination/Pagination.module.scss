@@ -1,17 +1,10 @@
 .container {
-  padding: 16px 16px;
-  background-color: rgba(20, 35, 46, 0.7);
-  border-top: 1px solid #374146;
-}
-.wrapper {
+  padding: 8px 16px;
+  background-color: #1a262f;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: var(--content-max-width);
-  margin: auto;
-  gap: 16px;
-  container-type: inline-size;
-  container-name: pagination;
+  gap: 12px;
 }
 .pagination {
   display: flex;
@@ -26,12 +19,13 @@
 .dots {
   color: #fff;
 
-  @container pagination (width < 768px) {
+  @media (width < 768px) {
     display: none;
   }
 }
 .number {
   width: 18px;
+  font-size: 16px;
   padding: 0;
 }
 .active {

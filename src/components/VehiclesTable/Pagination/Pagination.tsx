@@ -68,46 +68,43 @@ export const Pagination = ({
 
   return (
     <div className={styles.container}>
-      <div className={styles.wrapper}>
-        <div className={styles.pagination}>
-          <Button type="text" onClick={prevPage}>
-            <ChevronLeft />
-          </Button>
-          <div className={styles.numbers}>
-            {!isFirstPages ||
-              (!totalPages.length && <span className={styles.dots}>...</span>)}
-            {displayPages.map((pageNumber) => (
-              <Button
-                className={classNames(styles.number, {
-                  [styles.active]: page === pageNumber,
-                })}
-                key={pageNumber}
-                onClick={() => onFiltersChange({ page: pageNumber })}
-                type="text"
-              >
-                {pageNumber}
-              </Button>
-            ))}
-            {!isLastPages && <span className={styles.dots}>...</span>}
-          </div>
-          <Button type="text" onClick={nextPage}>
-            <ChevronRight />
-          </Button>
+      <div className={styles.pagination}>
+        <Button onClick={prevPage}>
+          <ChevronLeft />
+        </Button>
+        <div className={styles.numbers}>
+          {!isFirstPages ||
+            (!totalPages.length && <span className={styles.dots}>...</span>)}
+          {displayPages.map((pageNumber) => (
+            <Button
+              className={classNames(styles.number, {
+                [styles.active]: page === pageNumber,
+              })}
+              key={pageNumber}
+              onClick={() => onFiltersChange({ page: pageNumber })}
+            >
+              {pageNumber}
+            </Button>
+          ))}
+          {!isLastPages && <span className={styles.dots}>...</span>}
         </div>
-        <Select
-          className={styles.select}
-          value={LimitsPerPageOptions.find(
-            (option) => option.value === limit.toString()
-          )}
-          options={LimitsPerPageOptions}
-          onChange={(data) => {
-            if (data) {
-              onFiltersChange({ limit: parseInt(data.value), page: 1 });
-            }
-          }}
-          menuPlacement={"top"}
-        />
+        <Button onClick={nextPage}>
+          <ChevronRight />
+        </Button>
       </div>
+      <Select
+        className={styles.select}
+        value={LimitsPerPageOptions.find(
+          (option) => option.value === limit.toString()
+        )}
+        options={LimitsPerPageOptions}
+        onChange={(data) => {
+          if (data) {
+            onFiltersChange({ limit: parseInt(data.value), page: 1 });
+          }
+        }}
+        menuPlacement={"top"}
+      />
     </div>
   );
 };

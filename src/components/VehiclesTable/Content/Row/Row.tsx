@@ -24,25 +24,23 @@ export const Row = ({ vehicle }: RowProps): ReactElement => {
   const price = vehicle.price_credit || vehicle.price_gold;
 
   return (
-    <div
-      className={classNames(styles.row, {
-        [styles.premium]: vehicle.is_premium,
-      })}
-    >
-      <div className={styles.tier}>{TanksTiers[vehicle.tier]}</div>
-      <img src={vehicle.images.contour_icon} alt="" />
-      <div>
+    <div className={styles.rowContainer}>
+      <div
+        className={classNames(styles.row, {
+          [styles.premium]: vehicle.is_premium,
+        })}
+      >
+        <div className={styles.tier}>{TanksTiers[vehicle.tier]}</div>
+        <img src={vehicle.images.contour_icon} alt="" />
         <TypeIcon />
-      </div>
-      <div className={styles.name}>{vehicle.name}</div>
-      <div className={styles.price}>{price ? formatNumber(price) : "-"}</div>
-      <div className={styles.price}>
-        {vehicle.prices_xp
-          ? formatNumber(Object.values(vehicle.prices_xp)[0])
-          : "-"}
-      </div>
-      <div className={styles.endCol}>
-        <NationIcon />
+        <div className={styles.name}>{vehicle.name}</div>
+        <div className={styles.price}>{price ? formatNumber(price) : "-"}</div>
+        <div className={styles.price}>
+          {vehicle.prices_xp
+            ? formatNumber(Object.values(vehicle.prices_xp)[0])
+            : "-"}
+        </div>
+        <NationIcon className={styles.endCol} />
       </div>
     </div>
   );
