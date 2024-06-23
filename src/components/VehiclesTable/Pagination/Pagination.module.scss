@@ -1,0 +1,42 @@
+.container {
+  padding: 16px 16px;
+  background-color: rgba(20, 35, 46, 0.7);
+  border-top: 1px solid #374146;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--content-max-width);
+  margin: auto;
+  gap: 16px;
+  container-type: inline-size;
+  container-name: pagination;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.numbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.dots {
+  color: #fff;
+
+  @container pagination (width < 768px) {
+    display: none;
+  }
+}
+.number {
+  width: 18px;
+  padding: 0;
+}
+.active {
+  color: #ffaa00;
+}
+.select {
+  max-width: 200px;
+}

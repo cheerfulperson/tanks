@@ -1,0 +1,12 @@
+.container {
+  padding: 16px 16px;
+  background-color: rgba(20, 35, 46, 0.7);
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--content-max-width);
+  margin: auto;
+  gap: 16px;
+}

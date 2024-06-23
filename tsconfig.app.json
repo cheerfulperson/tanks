@@ -26,14 +26,13 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
+      "assets": ["./src/assets"],
       "components/*": ["./src/components/*"],
       "config/*": ["./src/config/*"],
       "constants/*": ["./src/constants/*"],
       "data_layer/*": ["./src/data_layer/*"],
       "hooks/*": ["./src/hooks/*"],
-      "layouts/*": ["./src/layouts/*"],
       "router": ["./src/router"],
-      "router/*": ["./src/router/*"],
       "types/*": ["./src/types/*"],
       "utils/*": ["./src/utils/*"],
       "views/*": ["./src/views/*"],
