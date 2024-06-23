@@ -1,0 +1,25 @@
+.button {
+  padding: 4px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.1s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.default {
+  background-color: #ffaa00;
+  color: #000000;
+}
+
+.text {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 4px;
+}

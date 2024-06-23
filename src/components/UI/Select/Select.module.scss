@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+
+  .control {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .indicatorSeparator {
+    display: none;
+  }
+  .singleValue {
+    color: #c2c2c2;
+  }
+  .menu {
+    background-color: #0a161f;
+    border: 1px solid #374146;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+  .option {
+    color: #fff;
+    background-color: transparent;
+
+    &_selected {
+      background-color: #0d283d;
+    }
+
+    &:hover {
+      background-color: #374146;
+    }
+  }
+}
