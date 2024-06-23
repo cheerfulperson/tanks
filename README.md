@@ -1,16 +1,14 @@
 # Tanki table demo
 
 ## Description
-Technologies used: `React`, `SCSS`
+Technologies and libraries used: `React`, `SCSS`, `react-query`
 
-The `VehiclesTable` component has been implemented and it includes implementation of the functionality:
+Implemented the `VehiclesTable` component and the `Vehicles` view for it, which includes an implementation of the functionality:
  - Pagination with a choice of the number of displayed tanks.
  - Input with a filter on tank names, provided that the names have diacritical marks.
- - The component is covered with unit-tests.
+ - The components is covered with unit-tests.
 
 ## Running and Building the Project
-
-To run and build the project, you can use the commands defined in the `package.json` file. Here's how examples:
 
 ### Running the Project
 
