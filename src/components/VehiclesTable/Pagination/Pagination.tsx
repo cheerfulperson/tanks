@@ -67,7 +67,7 @@ export const Pagination = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="pagination-component">
       <div className={styles.pagination}>
         <Button onClick={prevPage}>
           <ChevronLeft />
@@ -103,7 +103,7 @@ export const Pagination = ({
             onFiltersChange({ limit: parseInt(data.value), page: 1 });
           }
         }}
-        menuPlacement={"top"}
+        menuPlacement="top"
       />
     </div>
   );

@@ -31,7 +31,7 @@
       "config/*": ["./src/config/*"],
       "constants/*": ["./src/constants/*"],
       "data_layer/*": ["./src/data_layer/*"],
-      "hooks/*": ["./src/hooks/*"],
+      "mocks/*": ["./src/mocks/*"],
       "router": ["./src/router"],
       "types/*": ["./src/types/*"],
       "utils/*": ["./src/utils/*"],

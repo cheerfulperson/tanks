@@ -42,5 +42,10 @@ export const Select = <
     };
   }, []);
 
-  return <ReactSelect {...props} classNames={classNames} />;
+  return (
+    <ReactSelect
+      {...props}
+      classNames={classNames}
+    />
+  );
 };

@@ -16,6 +16,7 @@ export const Input = ({ onChange, placeholder, value }: InputProps) => {
         onChange(e.target.value);
       }}
       value={value}
+      data-testid="input"
     />
   );
 };

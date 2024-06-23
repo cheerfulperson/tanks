@@ -9,7 +9,6 @@ import styles from "./Content.module.scss";
 
 interface ContentProps {
   vehicles: Vehicle[];
-  limit: number;
   loading: boolean;
 }
 

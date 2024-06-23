@@ -24,7 +24,7 @@ export const Row = ({ vehicle }: RowProps): ReactElement => {
   const price = vehicle.price_credit || vehicle.price_gold;
 
   return (
-    <div className={styles.rowContainer}>
+    <div className={styles.rowContainer} data-testid={'row-item'}>
       <div
         className={classNames(styles.row, {
           [styles.premium]: vehicle.is_premium,

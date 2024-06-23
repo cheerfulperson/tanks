@@ -14,7 +14,6 @@ import { ToNumber } from "types/toNumber";
  */
 const fields = [
   "tank_id",
-  "tank_id",
   "is_premium",
   "name",
   "nation",
@@ -28,7 +27,7 @@ const fields = [
 
 /**
  * Custom hook for querying vehicles data.
- * 
+ *
  * @param {VehiclesQueryParams} params - The query parameters.
  * @returns {Object} - An object containing the loading state, total count, and paginated vehicles data.
  */
@@ -105,11 +104,11 @@ export type Vehicle = {
    */
   nation: Nations;
   /** Price in credits */
-  price_credit: number;
+  price_credit: number | null;
   /** Price in gold credits */
-  price_gold: number;
+  price_gold: number | null;
   /** Price in experience points */
-  prices_xp: Record<string, number>;
+  prices_xp: Record<string, number> | null;
   /** Vehicle level
    * @example I | II | III
    */

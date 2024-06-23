@@ -40,7 +40,7 @@ export const VehiclesTable = ({
   return (
     <div className={styles.container}>
       <Header onFiltersChange={onFiltersChange} search={filters.search} />
-      <Content vehicles={vehicles} limit={filters.limit} loading={loading} />
+      <Content vehicles={vehicles} loading={loading} />
       <Pagination
         limit={filters.limit}
         onFiltersChange={onFiltersChange}
