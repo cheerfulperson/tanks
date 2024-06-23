@@ -9,8 +9,17 @@ if (!APPLICATION_ID) {
   throw new Error("VITE_MQTT_BROKER_URL env is not defined");
 }
 
-/** App envir */
+/**
+ * Represents the environment configuration.
+ */
 export const env = {
+  /**
+   * The API URL.
+   */
   API_URL,
+
+  /**
+   * The application ID.
+   */
   APPLICATION_ID,
 };

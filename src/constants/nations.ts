@@ -13,29 +13,34 @@ import {
 } from "components/icons";
 
 export enum Nations {
-  USSR = "ussr",
-  USA = "usa",
-  GERMANY = "germany",
-  UK = "uk",
-  JAPAN = "japan",
-  CHINA = "china",
-  FRANCE = "france",
-  SWEDEN = "sweden",
-  ITALY = "italy",
-  POLAND = "poland",
-  CZECH = "czech",
+  ussr = "ussr",
+  usa = "usa",
+  germany = "germany",
+  uk = "uk",
+  japan = "japan",
+  china = "china",
+  france = "france",
+  sweden = "sweden",
+  italy = "italy",
+  poland = "poland",
+  czech = "czech",
 }
 
+export const NationsOptions = Object.entries(Nations).map(([value, label]) => ({
+  label: label.toUpperCase(),
+  value,
+}));
+
 export const NationsIcons = {
-  [Nations.USSR]: USSR,
-  [Nations.USA]: USA,
-  [Nations.GERMANY]: Germany,
-  [Nations.UK]: UK,
-  [Nations.JAPAN]: Japan,
-  [Nations.CHINA]: China,
-  [Nations.FRANCE]: France,
-  [Nations.SWEDEN]: Sweden,
-  [Nations.ITALY]: Italy,
-  [Nations.POLAND]: Poland,
-  [Nations.CZECH]: Czech,
+  [Nations.ussr]: USSR,
+  [Nations.usa]: USA,
+  [Nations.germany]: Germany,
+  [Nations.uk]: UK,
+  [Nations.japan]: Japan,
+  [Nations.china]: China,
+  [Nations.france]: France,
+  [Nations.sweden]: Sweden,
+  [Nations.italy]: Italy,
+  [Nations.poland]: Poland,
+  [Nations.czech]: Czech,
 };

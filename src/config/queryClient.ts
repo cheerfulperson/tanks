@@ -3,7 +3,13 @@ import axios from "axios";
 
 import { env } from "./env";
 
-/** Define a default query function that will receive the query key */ 
+/**
+ * Default query function used by the query client.
+ * Executes a GET request to the specified URL with the given parameters.
+ * @param queryKey - The query key containing the URL and parameters.
+ * @returns The response data from the GET request.
+ * @throws Error if the query key is invalid.
+ */
 export const defaultQueryFn: QueryFunction = async ({ queryKey }) => {
   const [url, params] = queryKey;
   if (
