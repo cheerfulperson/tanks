@@ -1,4 +1,4 @@
-import { ReactElement, useCallback, useMemo, useState } from "react";
+import { ReactElement, useCallback, useState } from "react";
 
 import {
   VehiclesQueryParams,
@@ -8,17 +8,16 @@ import { VehiclesTable } from "components/VehiclesTable";
 import { OnFiltersChangeFn } from "types/views/vehicles";
 import styles from "./Vehicles.module.scss";
 
+/**
+ * Renders the Vehicles component.
+ * This component displays a table of vehicles and allows filtering and pagination.
+ */
 export const Vehicles = (): ReactElement => {
-  const initialParams = useMemo<VehiclesQueryParams>(() => {
-    return {
-      limit: 10,
-      search: undefined,
-      page: 1,
-    };
-  }, []);
-
-  const [vehiclesParams, setVehiclesParams] =
-    useState<VehiclesQueryParams>(initialParams);
+  const [vehiclesParams, setVehiclesParams] = useState<VehiclesQueryParams>({
+    limit: 10,
+    search: undefined,
+    page: 1,
+  });
 
   const { isLoading, totalCount, vehicles } = useVehiclesQuery(vehiclesParams);
 

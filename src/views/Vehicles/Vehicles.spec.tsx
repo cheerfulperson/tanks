@@ -17,7 +17,7 @@ import App from "../../App";
 
 const server = setupServer(
   http.get(
-    `https://api.tanki.su/wot/encyclopedia/vehicles/?fields=${VehiclesFields.join(
+    `${env.API_URL}/wot/encyclopedia/vehicles/?fields=${VehiclesFields.join(
       ","
     )}&language=en&application_id=${env.APPLICATION_ID}`,
     () => {
@@ -66,9 +66,9 @@ describe("Vehicles", () => {
 
     expect(selectContainer.firstChild).not.toBeNull();
 
-    fireEvent.keyDown(selectContainer.firstChild!, { key: 'ArrowDown' });
-    await waitFor(() => screen.getByText('5 / page'));
-    fireEvent.click(screen.getByText('5 / page'));
+    fireEvent.keyDown(selectContainer.firstChild!, { key: "ArrowDown" });
+    await waitFor(() => screen.getByText("5 / page"));
+    fireEvent.click(screen.getByText("5 / page"));
 
     await waitFor(() =>
       expect(screen.getAllByTestId("row-item")).toHaveLength(5)

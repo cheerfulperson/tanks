@@ -33,15 +33,20 @@ export const Header = ({
     []
   );
 
+  const handleChange = useCallback(
+    (value: string) => {
+      setSearchValue(value);
+      handleSearchChange(value);
+    },
+    [handleSearchChange]
+  );
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <Logo className={styles.icon} />
         <Input
-          onChange={(value) => {
-            setSearchValue(value);
-            handleSearchChange(value);
-          }}
+          onChange={handleChange}
           placeholder="Search..."
           value={searchValue || ""}
         />

@@ -166,14 +166,18 @@ export const mockVehicles: Vehicle[] = [
   },
 ];
 
+const limit = 10;
+const page = 1;
+const page_total = Math.ceil(mockVehicles.length / limit);
+
 export const mockVehiclesResponse: VehiclesResponse = {
   status: "ok",
   meta: {
     count: mockVehicles.length,
-    limit: 10,
-    page: 1,
+    limit,
+    page,
     total: mockVehicles.length,
-    page_total: 1,
+    page_total,
   },
   data: mockVehicles.reduce((acc, vehicle) => {
     acc[vehicle.tank_id] = vehicle;

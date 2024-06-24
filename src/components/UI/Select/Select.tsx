@@ -9,6 +9,16 @@ type OptionType = {
   value: string;
 };
 
+/**
+ * Select component for rendering a dropdown menu with selectable options.
+ *
+ * @template OptionType - The type of the options in the dropdown menu.
+ * @template IsMulti - A boolean indicating whether multiple options can be selected.
+ * @template Group - The type of the group in which options can be grouped.
+ *
+ * @param {Props<OptionType, IsMulti, Group>} props - The props for the Select component.
+ * @returns {JSX.Element} - The rendered Select component.
+ */
 export const Select = <
   IsMulti extends boolean = false,
   Group extends GroupBase<OptionType> = GroupBase<OptionType>
@@ -42,10 +52,5 @@ export const Select = <
     };
   }, []);
 
-  return (
-    <ReactSelect
-      {...props}
-      classNames={classNames}
-    />
-  );
+  return <ReactSelect {...props} classNames={classNames} />;
 };
