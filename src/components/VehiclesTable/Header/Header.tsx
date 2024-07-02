@@ -4,6 +4,7 @@ import { debounce } from "lodash";
 import { Input } from "components/UI";
 import { OnFiltersChangeFn } from "types/views/vehicles";
 import { Logo } from "components/icons";
+import { normalizeDiacriticString } from "utils/normalizeDiacriticString";
 import styles from "./Header.module.scss";
 
 interface HeaderProps {
@@ -35,8 +36,9 @@ export const Header = ({
 
   const handleChange = useCallback(
     (value: string) => {
+      const newValue = normalizeDiacriticString(value).toLowerCase();
       setSearchValue(value);
-      handleSearchChange(value);
+      handleSearchChange(newValue);
     },
     [handleSearchChange]
   );
